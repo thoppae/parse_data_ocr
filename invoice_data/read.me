@@ -1,0 +1,24 @@
+# PDF Data Extraction to Google Sheets with Google Cloud Document AI and gspread
+
+This notebook demonstrates how to extract structured data from a PDF document using Google Cloud Document AI and then load that extracted data into a Google Sheet using the `gspread` library.
+
+## Process Overview
+
+The notebook follows these main steps:
+
+1.  Install and Import Libraries:** Installs necessary Python libraries including `google-cloud-documentai` for PDF processing, `gspread` for interacting with Google Sheets, and `oauth2client` for authentication.
+2.  Authenticate with Google Cloud and Google Sheets:** Authenticates the Colab environment to access Google Cloud services (for Document AI) and Google Sheets using `google.colab.auth` and `gspread`.
+3.  Configure Document AI:** Sets up the Document AI client by providing the Google Cloud project ID, location, and the specific processor ID to be used for PDF analysis.
+4.  Process PDF with Document AI:** Reads the target PDF file and sends it to the configured Document AI processor for analysis and data extraction.
+5.  Parse Document AI Response:** Extracts the relevant data (headers and values) from the structured response provided by Document AI.
+6.  Prepare Data for Google Sheets:** Formats the extracted data into a list of lists, suitable for updating a Google Sheet row-wise (headers in the first row, values in the second).
+7.  Load Data into Google Sheets:** Opens the specified Google Sheet using `gspread`, creates a new worksheet (or uses an existing one), and populates it with the prepared header and value data.
+
+## Libraries Used
+
+*   `google-cloud-documentai`: For intelligent document processing and data extraction from PDFs.
+*   `gspread`: For interacting with Google Sheets.
+*   `oauth2client`: For authentication with Google services.
+*   `google.colab.auth`: For authenticating within the Google Colab environment.
+
+This notebook provides a practical example of automating data extraction from documents and integrating it with Google Sheets workflows.
